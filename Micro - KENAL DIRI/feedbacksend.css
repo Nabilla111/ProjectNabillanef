@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*
+body {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #76ABAE;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h1 {
+    color: #FBF9F1;
+    margin-bottom: 30px;
+}
+
+p {
+    color: #FBF9F1;
+    margin-bottom: 20px;
+}
+.button-container {
+    font-family: "Lato", sans-serif;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    background-color: #F6F4EB;
+    color: #76ABAE;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #F6F4EB;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #76ABAE;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.footer ul li a {
+    color: #fff; /* Warna putih */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+.footer .social {
+    margin-top: 20px;
+}
+
+.footer .social a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer hr {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-color: #fff;
+}
+
+.footer p {
+    margin-bottom: 0;
+}

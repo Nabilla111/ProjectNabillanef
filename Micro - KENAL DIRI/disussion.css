@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFDF3;
+  }
+  
+/* start navbar */
+.navbar {
+    background-color: #76ABAE; /* Warna latar belakang navbar */
+}
+.navbar-brand {
+    color: #fff; /* Warna teks brand */
+    font-size: 30px; /* Ukuran font brand */
+    font-weight: bold; /* Ketebalan font brand */
+}
+
+.navbar-brand:hover {
+    color: #fff; /* Warna teks brand saat dihover */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* Warna teks menu */
+    font-size: 18px; /* Ukuran font menu */
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fff; /* Warna teks menu saat dihover */
+}
+
+.search-bar {
+    margin-right: 100px; /* Posisi search bar ke kanan */
+    display: flex; /* Menjadikan search bar dan button sejajar */
+    align-items: center; /* Posisi vertical search bar dan button */
+    position: relative; /* Membuat posisi relatif untuk search bar */
+}
+
+.search-bar input[type="search"] {
+    width: 300px; /* Lebar input search */
+    padding: 8px 30px 8px 10px; /* Padding input search */
+    border-radius: 10px; /* Border radius input search */
+    border: none; /* Menghapus border input search */
+    padding-left: 30px; /* Menyisipkan ruang untuk ikon */
+    background-color: #FFFDF3; /* Warna latar input search */
+    color: #050003; /* Warna teks input search */
+}
+
+.search-bar i {
+    position: absolute; /* Membuat posisi ikon absolut */
+    left: 10px; /* Jarak dari kiri input */
+    top: 50%; /* Posisi vertikal di tengah input */
+    transform: translateY(-50%); /* Menggeser ikon ke tengah secara vertikal */
+}
+
+.button {
+    margin-left: 10px; /* Jarak antara search bar dan button */
+}
+
+.button .btn {
+    background-color: #FFFDF3; /* Warna latar button */
+    color: #828282; /* Warna teks button */
+    border: none; /* Menghapus border button */
+    padding: 8px 16px; /* Padding button */
+    border-radius: 10px; /* Border radius button */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+}
+
+.button .btn:hover {
+    background-color: #FFFDF3; /* Warna latar button saat dihover */
+}
+
+/* End navbar */
+
+/* Judul */
+.article-info {
+    position: absolute;
+    top: 120px; /* Jarak dari bagian atas */
+    left: 50px; /* Jarak dari bagian kiri */
+    color: #333; /* Warna teks */
+    font-family: Arial, sans-serif; /* Font family */
+    order: 1;
+}
+
+.article-title {
+    font-size: 30px; /* Ukuran judul artikel */
+    font-weight: 600;
+    margin-bottom: 10px; /* Hapus margin default */
+}
+
+.article-time {
+    font-size: 14px; /* Ukuran keterangan waktu */
+    font-weight: 400;
+    margin: 0; /* Hapus margin default */
+}
+
+/* berita */
+.latest-news {
+    background-color: #E6F0F0;
+    border: 1px solid #E6F0F0;
+    border-radius: 10px;
+    overflow: hidden; /* Membuat kotak menyesuaikan konten */
+    padding: 30px;
+    order: 2;
+    margin-top: 210px; /* Atur margin atas */
+    margin-right: 50px; /* Atur margin kanan */
+    margin-bottom: 50px; /* Atur margin bawah */
+    margin-left: 50px; /* Atur margin kiri */
+}
+
+.containers {
+    margin-bottom: 20px;
+}
+
+.news-item {
+    display: flex;
+}
+
+.news-image {
+    flex: 0 0 40%; /* Lebar gambar */
+    margin-right: 30px; /* Jarak antara gambar dan konten */
+}
+
+.news-image img {
+    width: 100%; /* Gambar mengisi lebar kotak */
+    border-radius: 10px;
+}
+
+.news-content {
+    flex: 1; /* Konten memenuhi sisa lebar */
+}
+
+.button-container {
+    margin-top: 10px; /* Atur jarak antara tulisan */
+    text-align: right; /* Tulisan diatur ke kanan */
+}
+
+.link-like, .link-comment {
+    margin-left: 20px; /* Atur jarak antara tulisan */
+    color: #616161; /* Ubah warna teks menjadi biru */
+}
+
+.judul {
+    font-size: 30px; /* Ukuran judul artikel */
+    font-weight: 600;
+    margin-left: 50px; /* Atur margin kiri */
+}
+
+/* Comment */
+.comment {
+    border: 1px solid transparent; /* garis tepi */
+    border-radius: 10px; /* membuat sudut menjadi melengkung */
+    padding: 30px; /* memberikan ruang di dalam kotak */
+    margin: 50px; /* Memberikan jarak di kanan dan kiri */
+    margin-bottom: 20px; /* memberikan jarak antara setiap komentar */
+    overflow: hidden; /* agar tidak terjadi overflow konten */
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 3.5px solid #CCCCCC; /* Tambahkan garis di sebelah kiri */
+    padding-left: 50px; /* Berikan padding agar konten tidak terlalu dekat dengan garis */
+}
+
+.comment-profile {
+    display: flex; /* mengatur tata letak profil dan informasi */
+    align-items: center; /* memposisikan secara vertikal */
+}
+
+.comment-profile img {
+    width: 50px; /* ukuran gambar profil */
+    height: 50px;
+    border-radius: 10%; /* membuat gambar menjadi lingkaran */
+    margin-right: 10px; /* memberikan jarak antara gambar profil dan teks */
+}
+
+.comment-profile h5,
+.comment-profile p {
+    display: inline-block; /* Menjadikan elemen h5 dan p sebagai inline block */
+    vertical-align: middle; /* Posisikan secara vertikal di tengah */
+    margin: 0; /* Menghapus margin default */
+}
+
+.comment-profile h5 {
+    margin-right: 10px; /* Memberikan jarak kanan antara h5 dan p */
+}
+
+.comment-profile p {
+    margin-left: 10px; /* Geser p ke kanan */
+}
+
+.comment-profile i {
+    margin-left: auto; /* Geser i ke kanan sejauh mungkin */
+}
+
+.fa-reply {
+    color: #76ABAE; /* Mengatur warna ikon */
+}
+.fa-reply::after {
+    font-family: "Lato", sans-serif;
+    content: "Reply"; /* Menambahkan teks "Reply" setelah ikon */
+    margin-left: 10px; /* Memberikan jarak antara ikon dan teks */
+    color: #76ABAE;
+}
+
+.comment-content {
+    margin-top: 30px; /* memberikan ruang antara profil dan konten */
+}
+
+.comment-info {
+    display: flex; /* mengatur tata letak informasi */
+    align-items: center; /* memposisikan secara vertikal */
+    margin-top: 5px; /* memberikan ruang antara konten dan informasi */
+}
+
+.comment-info p {
+    margin-right: 10px; /* memberikan jarak antara teks */
+}
+
+.fa-trash {
+    color: #E6666A; /* Mengatur warna ikon */
+}
+
+.fa-trash::after {
+    font-family: "Lato", sans-serif;
+    content: "Delete"; /* Menambahkan teks "Reply" setelah ikon */
+    margin-left: 10px; /* Memberikan jarak antara ikon dan teks */
+    color: #E6666A;
+}
+
+.fa-pen {
+    color: #76ABAE;
+}
+
+.fa-pen::after {
+    font-family: "Lato", sans-serif;
+    content: "Edit"; /* Menambahkan teks "Reply" setelah ikon */
+    margin-left: 10px; /* Memberikan jarak antara ikon dan teks */
+    color: #76ABAE;
+}
+
+button {
+    font-size: 16px; /* Ubah ukuran font */
+    padding: 5.5px 20px; /* Sesuaikan padding */
+    background-color: #76ABAE; /* Ubah warna background */
+    color: #FBF9F1; /* Ubah warna teks */
+    border: none; /* Hapus border */
+    border-radius: 5px; /* Tambahkan radius sudut */
+    margin-top: 10px;
+    cursor: pointer; /* Ubah kursor saat diarahkan */
+}
+
+/* Saat tombol dihover */
+button:hover {
+    background-color: #ffffff; /* Ubah warna background */
+}
+
+input[type="text"] {
+    font-size: 16px; /* Atur ukuran font */
+    padding: 20px; /* Atur padding */
+    width: 100%; /* Sesuaikan lebar input */
+    box-sizing: border-box; /* Agar padding tidak mempengaruhi lebar input */
+    border-radius: 8px;
+}
+
+
+
+

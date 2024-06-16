@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     <link rel="stylesheet" href="myaccount.css" />
+
+    <title>My Account page</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">KenalDiri</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forumpage.html">Forum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="psikolog.html">Consultation</a>
+              </li>
+              <li class="nav-item">
+                <button class="bg-light px-5 border-0 rounded-3 ms-4" type="button">
+                  <a class="nav-link" style="color: #828282;" href="">My Account</a>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+     <!-- Cover with Personal Information button -->
+     <div class="cover">
+        <img src="img/cover.jpeg" class="img-fluid" alt="Responsive image">
+        <button class="personal-info-btn">
+            <i class='bx bx-chevron-left'></i><span>Personal Information</span>
+        </button>  
+      </div>
+
+    <!-- Form -->
+    <div class="cover">
+        <div class="big-box">
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img id="profile-image" src="default-profile-pic.jpg" alt="Profile Picture">
+                    <input type="file" id="profile-upload" accept="image/*">
+                </div>
+                <label for="profile-upload" class="upload-btn">Upload Picture</label>
+            </div>
+            <form>
+                <div class="form-container">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="date-of-birth">Date of Birth</label>
+                            <input type="date" id="date-of-birth" name="date-of-birth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="gender-options">
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Change Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="save-btn">Save</button>
+                    <button type="button" class="logout-btn">Logout</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <h2>KenalDiri</h2>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="forumpage.html">Forum</a></li>
+                <li><a href="psikolog.html">Consultation</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a href="#"><i class='fa-regular fa-envelope'></i></a>
+            <a href="#"><i class='fa-brands fa-youtube'></i></a>
+            <a href="#"><i class='fa-brands fa-whatsapp'></i></a>
+            <a href="#"><i class='fa-brands fa-instagram'></i></a>
+        </div>
+        <hr>
+        <p class="copyright">Copyright © 2024 X Celerate</p>
+      </footer>
+
+    <script>
+        document.getElementById('profile-upload').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-image').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+    </script>
+</body>
+</html>

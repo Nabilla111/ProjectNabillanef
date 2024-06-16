@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Make an Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style-janjitemu.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="page-appointment">
+    <div class="section-1">
+        <div class="back">
+            <i class="fa-solid fa-arrow-left icon-back"></i>
+        </div>
+        <p class="sub-heading-1">To understand yourself after choosing a psychologist,</p>
+        <p class="sub-heading-2">Let’s make an appointment!</p>
+        <img src="assets/banner.svg" alt="ilustrasi">
+    </div>
+    <form action="formGetData.html" class="section-2">
+        <div class="card">
+            <img src="assets/people.svg" alt="psikolog">
+            <div class="card-body">
+                <p class="name">Dian Helena S.Psi, M.Psi, Psikolog</p>
+                <p class="sub-name">Psikolog Klinis</p>
+                <div>
+                    <div class="box">
+                        <img src="assets/bag.svg" alt="bag">
+                        <p>4 tahun</p>
+                    </div>
+                    <div class="box">
+                        <img src="assets/like.svg" alt="like">
+                        <p>100%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="date-time">
+            <label>Select the consultation date & time</label>
+            <div id="container-day">
+                <div class="form-date">
+                    <div id="mon" class="box-date"><p id="currentDayMon">Mon</p><span id="currentDateMon"></span></div>
+                    <div id="tue" class="box-date"><p id="currentDayTue">Tue</p><span id="currentDateTue"></span></div>
+                    <div id="wed" class="box-date"><p id="currentDayWed">Wed</p><span id="currentDateWed"></span></div>
+                    <div id="thu" class="box-date"><p id="currentDayThu">Thu</p><span id="currentDateThu"></span></div>
+                    <div id="fri" class="box-date"><p id="currentDayFri">Fri</p><span id="currentDateFri"></span></div>
+                    <input type="hidden" name="date" id="day" />
+                </div>
+                <div id="box-calendar-id" class="box-date box-calendar">
+                    <img id="icon-calendar" src="assets/calendar.svg" alt="calendar">
+                    <p id="currentMonth">March</p>
+                    <input type="date" id="input-date">
+                </div>
+            </div>
+            <div class="card-time">
+                <div>
+                    <p>Morning</p>
+                    <div id="morning" class="box-time">08.00 - 10.00</div>
+                </div>
+                <div>
+                    <p>Noon</p>
+                    <div id="noon" class="box-time">13.00 - 14.00</div>
+                </div>
+                <div>
+                    <p>Night</p>
+                    <div id="night" class="box-time">16.00 - 17.00</div>
+                </div>
+                <input type="hidden" name="time" id="time" />
+            </div>
+        </div>
+        <div class="form-bottom">
+            <div class="form-group form-consul">
+                <label for="consultation_method">Consultation method</label>
+                <select class="form-control" name="consultation_method" id="consultation_method">
+                    <option selected disabled>Choose a consultation method</option>
+                    <option value="chat">Chat</option>
+                    <option value="call">Call</option>
+                    <option value="video_call">Video call</option>
+                </select>
+            </div>
+            <div class="form-group form-price">
+                <label for="form-price">Price</label>
+                <input id="form-price" class="form-control" type="text" disabled placeholder="Rp.">
+                <input id="price-input" type="hidden" name="price">
+            </div>
+        </div>
+        <div class="btn-group">
+            <a href="form-pembayaran.html" class="button-payment">Payment</a>
+        </div>
+    </form>
+   </div> 
+
+   <script>
+        var boxCalendar = document.getElementById('box-calendar-id');
+        var iconCalendar = document.getElementById('icon-calendar');
+        var consulMethod = document.getElementById('consultation_method');
+        var formPrice = document.getElementById('form-price');
+
+        var dateInput = document.getElementById('input-date');
+        var dayInput = document.getElementById('day');
+        var timeInput = document.getElementById('time');
+        var priceInput = document.getElementById('price-input');
+
+        var mon = document.getElementById("mon");
+        var tue = document.getElementById("tue");
+        var wed = document.getElementById("wed");
+        var thu = document.getElementById("thu");
+        var fri = document.getElementById("fri");
+        var morning = document.getElementById("morning");
+        var noon = document.getElementById("noon");
+        var night = document.getElementById("night");
+        var containerDay = document.getElementById('container-day');
+
+        var bgColorMon = "#F1F1F1";
+        var bgColorTue = "#F1F1F1";
+        var bgColorWed = "#F1F1F1";
+        var bgColorThu = "#F1F1F1";
+        var bgColorFri = "#F1F1F1";
+        var bgColorBcalendar = "#F1F1F1";
+
+        var bgColorMorning = "#F1F1F1";
+        var bgColorNoon = "#F1F1F1";
+        var bgColorNight = "#F1F1F1";
+
+        var currentDateMon = document.getElementById('currentDateMon');
+        var currentDateTue = document.getElementById('currentDateTue');
+        var currentDateWed = document.getElementById('currentDateWed');
+        var currentDateThu = document.getElementById('currentDateThu');
+        var currentDateFri = document.getElementById('currentDateFri');
+
+        var currentDayMon = document.getElementById('currentDayMon');
+        var currentDayTue = document.getElementById('currentDayTue');
+        var currentDayWed = document.getElementById('currentDayWed');
+        var currentDayThu = document.getElementById('currentDayThu');
+        var currentDayFri = document.getElementById('currentDayFri');
+
+        var currentMonth = document.getElementById('currentMonth');
+
+        var currentDate = new Date();
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth(); // Bulan dimulai dari 0 (Januari)
+        var date = currentDate.getDate();
+        var dayIndex = currentDate.getDay();
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        function getDateFromDay(dayIndex) {
+            var currentDayIndex = currentDate.getDay();
+
+            // Hitung selisih hari antara hari saat ini dan hari yang diinginkan
+            var dayDifference = dayIndex - currentDayIndex;
+
+            // Tambahkan selisih hari ke tanggal saat ini
+            currentDate.setDate(currentDate.getDate() + dayDifference);
+
+            return currentDate;
+        }
+
+        var desiredDate = getDateFromDay(1);
+        
+        currentMonth.innerHTML = months[month];
+
+        currentDateMon.innerHTML = new Date(desiredDate).getDate();
+        currentDateTue.innerHTML = new Date(desiredDate).getDate() + 1;
+        currentDateWed.innerHTML = new Date(desiredDate).getDate() + 2;
+        currentDateThu.innerHTML = new Date(desiredDate).getDate() + 3;
+        currentDateFri.innerHTML = new Date(desiredDate).getDate() + 4;
+
+        currentDayMon.innerHTML = days[1];
+        currentDayTue.innerHTML = days[2];
+        currentDayWed.innerHTML = days[3];
+        currentDayThu.innerHTML = days[4];
+        currentDayFri.innerHTML = days[5];
+
+        boxCalendar.addEventListener("click", function() {
+            dateInput.focus();
+
+            mon.style.display = "flex";
+            tue.style.display = "flex";
+            wed.style.display = "flex";
+            thu.style.display = "flex";
+            fri.style.display = "flex";
+            
+            boxCalendar.style.width = "60px";
+            containerDay.style.gap = "15px";
+            iconCalendar.style.display = "block";
+
+            currentMonth.innerHTML = months[month];
+        });
+
+        dateInput.addEventListener('change', function () {
+            var disabledDays = [0, 6];
+            var selectedDate = new Date(dateInput.value);
+            var dayOfWeek = selectedDate.getDay();
+            if (disabledDays.includes(dayOfWeek)) {
+                alert("Can't choose Saturday and Sunday.");
+            } else {
+                var valueDateFromInput = days[new Date(dateInput.value).getDay()] + ', ' + new Date(dateInput.value).getDate() + ' ' + months[new Date(dateInput.value).getMonth()] + ' ' + new Date(dateInput.value).getFullYear();
+    
+                mon.style.display = "none";
+                tue.style.display = "none";
+                wed.style.display = "none";
+                thu.style.display = "none";
+                fri.style.display = "none";
+    
+                boxCalendar.style.width = "100%";
+                boxCalendar.style.textAlign = "center";
+                containerDay.style.gap = "0";
+                iconCalendar.style.display = "none";
+                
+                currentMonth.innerHTML = valueDateFromInput;
+                dayInput.value = dateInput.value;
+            }
+        });
+
+        consulMethod.addEventListener("change", function() {
+            value = consulMethod.value;
+            if (value === 'chat') {
+                price = "Rp 100.000";
+                priceInput.value = 100000;
+            } else if (value === 'call') {
+                price = "Rp 200.000";
+                priceInput.value = 200000;
+            } else if (value === 'video_call') {
+                price = "Rp 250.000";
+                priceInput.value = 250000;
+            }
+
+            formPrice.value = price;
+        });
+
+        mon.addEventListener("click", function() {
+            mon.style.backgroundColor = "#76ABAE";
+            mon.style.color = "#fff";
+
+            tue.style.backgroundColor = "#F1F1F1";
+            tue.style.color = "#828282";
+
+            wed.style.backgroundColor = "#F1F1F1";
+            wed.style.color = "#828282";
+
+            thu.style.backgroundColor = "#F1F1F1";
+            thu.style.color = "#828282";
+
+            fri.style.backgroundColor = "#F1F1F1";
+            fri.style.color = "#828282";
+
+            boxCalendar.style.backgroundColor = "#F1F1F1";
+            boxCalendar.style.color = "#828282";
+
+            iconCalendar.src = "./assets/calendar.svg";
+            
+            bgColorMon = "#76ABAE";
+            bgColorTue = "#f1f1f1";
+            bgColorWed = "#f1f1f1";
+            bgColorThu = "#f1f1f1";
+            bgColorFri = "#f1f1f1";
+            bgColorBcalendar = "#f1f1f1";
+            
+            dayInput.value = `${new Date(desiredDate).getFullYear()}-${new Date(desiredDate).getMonth() + 1}-${new Date(desiredDate).getDate()}`;
+        })
+
+        mon.addEventListener("mouseover", function() {
+            mon.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        mon.addEventListener("mouseout", function() {
+            mon.style.backgroundColor = bgColorMon;
+        });
+
+        tue.addEventListener("click", function() {
+            mon.style.backgroundColor = "#F1F1F1";
+            mon.style.color = "#828282";
+
+            tue.style.backgroundColor = "#76ABAE";
+            tue.style.color = "#fff";
+
+            wed.style.backgroundColor = "#F1F1F1";
+            wed.style.color = "#828282";
+
+            thu.style.backgroundColor = "#F1F1F1";
+            thu.style.color = "#828282";
+
+            fri.style.backgroundColor = "#F1F1F1";
+            fri.style.color = "#828282";
+
+            boxCalendar.style.backgroundColor = "#F1F1F1";
+            boxCalendar.style.color = "#828282";
+
+            iconCalendar.src = "./assets/calendar.svg";
+
+            bgColorMon = "#f1f1f1";
+            bgColorTue = "#76ABAE";
+            bgColorWed = "#f1f1f1";
+            bgColorThu = "#f1f1f1";
+            bgColorFri = "#f1f1f1";
+            bgColorBcalendar = "#f1f1f1";
+
+            dayInput.value = `${new Date(desiredDate).getFullYear()}-${new Date(desiredDate).getMonth() + 1}-${new Date(desiredDate).getDate() + 1}`;
+        })
+
+        tue.addEventListener("mouseover", function() {
+            tue.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        tue.addEventListener("mouseout", function() {
+            tue.style.backgroundColor = bgColorTue;
+        });
+
+        wed.addEventListener("click", function() {
+            mon.style.backgroundColor = "#F1F1F1";
+            mon.style.color = "#828282";
+
+            tue.style.backgroundColor = "#F1F1F1";
+            tue.style.color = "#828282";
+
+            wed.style.backgroundColor = "#76ABAE";
+            wed.style.color = "#fff";
+
+            thu.style.backgroundColor = "#F1F1F1";
+            thu.style.color = "#828282";
+
+            fri.style.backgroundColor = "#F1F1F1";
+            fri.style.color = "#828282";
+
+            boxCalendar.style.backgroundColor = "#F1F1F1";
+            boxCalendar.style.color = "#828282";
+
+            iconCalendar.src = "./assets/calendar.svg";
+
+            bgColorMon = "#f1f1f1";
+            bgColorTue = "#f1f1f1";
+            bgColorWed = "#76ABAE";
+            bgColorThu = "#f1f1f1";
+            bgColorFri = "#f1f1f1";
+            bgColorBcalendar = "#f1f1f1";
+
+            dayInput.value = `${new Date(desiredDate).getFullYear()}-${new Date(desiredDate).getMonth() + 1}-${new Date(desiredDate).getDate() + 2}`;
+        })
+
+        wed.addEventListener("mouseover", function() {
+            wed.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        wed.addEventListener("mouseout", function() {
+            wed.style.backgroundColor = bgColorWed;
+        });
+
+        thu.addEventListener("click", function() {
+            mon.style.backgroundColor = "#F1F1F1";
+            mon.style.color = "#828282";
+
+            tue.style.backgroundColor = "#F1F1F1";
+            tue.style.color = "#828282";
+
+            wed.style.backgroundColor = "#F1F1F1";
+            wed.style.color = "#828282";
+
+            thu.style.backgroundColor = "#76ABAE";
+            thu.style.color = "#fff";
+
+            fri.style.backgroundColor = "#F1F1F1";
+            fri.style.color = "#828282";
+
+            boxCalendar.style.backgroundColor = "#F1F1F1";
+            boxCalendar.style.color = "#828282";
+
+            iconCalendar.src = "./assets/calendar.svg";
+
+            bgColorMon = "#f1f1f1";
+            bgColorTue = "#f1f1f1";
+            bgColorWed = "#f1f1f1";
+            bgColorThu = "#76ABAE";
+            bgColorFri = "#f1f1f1";
+            bgColorBcalendar = "#f1f1f1";
+
+            dayInput.value = `${new Date(desiredDate).getFullYear()}-${new Date(desiredDate).getMonth() + 1}-${new Date(desiredDate).getDate() + 3}`;
+        })
+
+        thu.addEventListener("mouseover", function() {
+            thu.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        thu.addEventListener("mouseout", function() {
+            thu.style.backgroundColor = bgColorThu;
+        });
+
+        fri.addEventListener("click", function() {
+            mon.style.backgroundColor = "#F1F1F1";
+            mon.style.color = "#828282";
+
+            tue.style.backgroundColor = "#F1F1F1";
+            tue.style.color = "#828282";
+
+            wed.style.backgroundColor = "#F1F1F1";
+            wed.style.color = "#828282";
+
+            thu.style.backgroundColor = "#F1F1F1";
+            thu.style.color = "#828282";
+
+            fri.style.backgroundColor = "#76ABAE";
+            fri.style.color = "#fff";
+
+            boxCalendar.style.backgroundColor = "#F1F1F1";
+            boxCalendar.style.color = "#828282";
+
+            iconCalendar.src = "./assets/calendar.svg";
+
+            bgColorMon = "#f1f1f1";
+            bgColorTue = "#f1f1f1";
+            bgColorWed = "#f1f1f1";
+            bgColorThu = "#f1f1f1";
+            bgColorFri = "#76ABAE";
+            bgColorBcalendar = "#f1f1f1";
+
+            dayInput.value = `${new Date(desiredDate).getFullYear()}-${new Date(desiredDate).getMonth() + 1}-${new Date(desiredDate).getDate() + 4}`;
+        })
+
+        fri.addEventListener("mouseover", function() {
+            fri.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        fri.addEventListener("mouseout", function() {
+            fri.style.backgroundColor = bgColorFri;
+        });
+
+        boxCalendar.addEventListener("click", function() {
+            mon.style.backgroundColor = "#F1F1F1";
+            mon.style.color = "#828282";
+
+            tue.style.backgroundColor = "#F1F1F1";
+            tue.style.color = "#828282";
+
+            wed.style.backgroundColor = "#F1F1F1";
+            wed.style.color = "#828282";
+
+            thu.style.backgroundColor = "#F1F1F1";
+            thu.style.color = "#828282";
+
+            fri.style.backgroundColor = "#F1F1F1";
+            fri.style.color = "#828282";
+
+            boxCalendar.style.backgroundColor = "#76ABAE";
+            boxCalendar.style.color = "#fff";
+
+            bgColorMon = "#f1f1f1";
+            bgColorTue = "#f1f1f1";
+            bgColorWed = "#f1f1f1";
+            bgColorThu = "#f1f1f1";
+            bgColorFri = "#f1f1f1";
+            bgColorBcalendar = "#76ABAE";
+
+            iconCalendar.src = "./assets/calendar-white.svg";
+        })
+
+        boxCalendar.addEventListener("mouseover", function() {
+            boxCalendar.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        boxCalendar.addEventListener("mouseout", function() {
+            boxCalendar.style.backgroundColor = bgColorBcalendar;
+        });
+
+        morning.addEventListener("click", function(){
+            morning.style.backgroundColor = "#76ABAE";
+            morning.style.color = "#fff";
+
+            noon.style.backgroundColor = "#F1F1F1";
+            noon.style.color = "#828282";
+
+            night.style.backgroundColor = "#F1F1F1";
+            night.style.color = "#828282";
+
+            bgColorMorning = "#76ABAE";
+            bgColorNoon = "#f1f1f1";
+            bgColorNight = "#f1f1f1";
+
+            timeInput.value = "08.00-10.00";
+        })
+
+        morning.addEventListener("mouseover", function() {
+            morning.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        morning.addEventListener("mouseout", function() {
+            morning.style.backgroundColor = bgColorMorning;
+        });
+
+        noon.addEventListener("click", function(){
+            morning.style.backgroundColor = "#F1F1F1";
+            morning.style.color = "#828282";
+
+            noon.style.backgroundColor = "#76ABAE";
+            noon.style.color = "#fff";
+
+            night.style.backgroundColor = "#F1F1F1";
+            night.style.color = "#828282";
+
+            bgColorMorning = "#f1f1f1";
+            bgColorNoon = "#76ABAE";
+            bgColorNight = "#f1f1f1";
+
+            timeInput.value = "13.00-14.00";
+        })
+
+        noon.addEventListener("mouseover", function() {
+            noon.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        noon.addEventListener("mouseout", function() {
+            noon.style.backgroundColor = bgColorNoon;
+        });
+
+        night.addEventListener("click", function(){
+            morning.style.backgroundColor = "#F1F1F1";
+            morning.style.color = "#828282";
+
+            noon.style.backgroundColor = "#F1F1F1";
+            noon.style.color = "#828282";
+
+            night.style.backgroundColor = "#76ABAE";
+            night.style.color = "#fff";
+
+            bgColorMorning = "#f1f1f1";
+            bgColorNoon = "#f1f1f1";
+            bgColorNight = "#76ABAE";
+
+            timeInput.value = "16.00-17.00";
+        })
+
+        night.addEventListener("mouseover", function() {
+            night.style.backgroundColor = "#AAD7D9";
+        }); 
+        
+        night.addEventListener("mouseout", function() {
+            night.style.backgroundColor = bgColorNight;
+        });
+   </script>
+   
+</body>
+</html>

@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFDF3;
+  }
+  
+/* start navbar */
+.navbar {
+    background-color: #76ABAE; /* Warna latar belakang navbar */
+}
+.navbar-brand {
+    color: #fff; /* Warna teks brand */
+    font-size: 30px; /* Ukuran font brand */
+    font-weight: bold; /* Ketebalan font brand */
+}
+
+.navbar-brand:hover {
+    color: #fff; /* Warna teks brand saat dihover */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* Warna teks menu */
+    font-size: 18px; /* Ukuran font menu */
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fff; /* Warna teks menu saat dihover */
+}
+
+.search-bar {
+    margin-right: 100px; /* Posisi search bar ke kanan */
+    display: flex; /* Menjadikan search bar dan button sejajar */
+    align-items: center; /* Posisi vertical search bar dan button */
+    position: relative; /* Membuat posisi relatif untuk search bar */
+}
+
+.search-bar input[type="search"] {
+    width: 300px; /* Lebar input search */
+    padding: 8px 30px 8px 10px; /* Padding input search */
+    border-radius: 10px; /* Border radius input search */
+    border: none; /* Menghapus border input search */
+    padding-left: 30px; /* Menyisipkan ruang untuk ikon */
+    background-color: #FFFDF3; /* Warna latar input search */
+    color: #050003; /* Warna teks input search */
+}
+
+.search-bar i {
+    position: absolute; /* Membuat posisi ikon absolut */
+    left: 10px; /* Jarak dari kiri input */
+    top: 50%; /* Posisi vertikal di tengah input */
+    transform: translateY(-50%); /* Menggeser ikon ke tengah secara vertikal */
+}
+
+.button {
+    margin-left: 10px; /* Jarak antara search bar dan button */
+}
+
+.button .btn {
+    background-color: #FFFDF3; /* Warna latar button */
+    color: #828282; /* Warna teks button */
+    border: none; /* Menghapus border button */
+    padding: 8px 16px; /* Padding button */
+    border-radius: 10px; /* Border radius button */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+}
+
+.button .btn:hover {
+    background-color: #FFFDF3; /* Warna latar button saat dihover */
+}
+
+/* End navbar */
+
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.cover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.text-overlay h1{
+  margin: 0;
+  font-size: 35px;
+}
+.text-overlay h5  {
+  margin: 0;
+  font-size: 18px;
+}
+
+.section.project {
+  padding: 50px 0;
+}
+
+.section-title {
+  margin-bottom: 30px;
+}
+
+/* Content */
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 10px;
+  overflow: auto; /* Mengizinkan kedua jenis guliran */
+  max-height: 400px; /* Atur tinggi maksimum konten */
+}
+
+/* Menghilangkan scroll bar pada browser berbasis webkit */
+.content::-webkit-scrollbar {
+  display: none; /* Menyembunyikan scroll bar */
+}
+.content-item {
+  position: relative; /* Menjadikan posisi relatif */
+  margin-right: 20px;
+  text-align: center;
+}
+
+.content-item img {
+  width: 257px;
+  height: 213px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.content-item h5 {
+  position: absolute;
+  bottom: 25px; /* Mengatur jarak vertikal dari bawah gambar */
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: medium;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box; /* Untuk memastikan padding tidak mempengaruhi lebar */
+  z-index: 1; /* Menetapkan z-index untuk h5 agar lebih tinggi */
+}
+
+.content-item p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: small;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box; /* Untuk memastikan padding tidak mempengaruhi lebar */
+  z-index: 0; /* Menetapkan z-index untuk p agar lebih rendah */
+}
+
+/* Button Most Populer */
+.button-containerr {
+  position: relative;
+  margin-top: 5px; /* Atur jarak antara tombol dengan konten di atasnya */
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.button-containerr button {
+  background-image: linear-gradient(to right, #8BBDC0, #78ACAF, #76ABAE); /* Warna latar belakang tombol */
+  color: #FBF9F1; /* Warna teks tombol */
+  border: none;
+  padding: 10px 20px; /* Atur padding tombol */
+  border-radius: 10px; /* Atur border-radius tombol */
+  font-size: 20px; /* Atur ukuran font tombol */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transisi ketika tombol dihover */
+}
+
+.button-containerr button:hover {
+  background-image: linear-gradient(to right, #8BBDC0, #78ACAF, #76ABAE); /* Warna latar belakang tombol saat dihover */
+}
+
+.button-containerr button i {
+  margin-left: 5px; /* Atur jarak antara teks tombol dan ikon chevron-down */
+}
+
+/* berita */
+.latest-news {
+  background-color: #E6F0F0;
+  padding: 20px;
+  border: 1px solid #E6F0F0;
+  border-radius: 10px;
+  overflow: hidden; /* Membuat kotak menyesuaikan konten */
+  margin: 50px; /* Memberikan jarak di kanan dan kiri */
+  padding-top: 40px; /* Atur jarak atas kotak berita */
+  padding-bottom: 20px; /* Atur jarak bawah kotak berita */
+}
+
+.news-item {
+  display: flex;
+}
+
+.news-image {
+  flex: 0 0 40%; /* Lebar gambar */
+  margin-right: 30px; /* Jarak antara gambar dan konten */
+}
+
+.news-image img {
+  width: 100%; /* Gambar mengisi lebar kotak */
+  border-radius: 10px;
+}
+
+.news-content {
+  flex: 1; /* Konten memenuhi sisa lebar */
+}
+
+.button-container {
+  margin-top: 10px; /* Atur jarak antara tulisan */
+  text-align: right; /* Tulisan diatur ke kanan */
+}
+
+.link-like, .link-comment {
+  margin-left: 20px; /* Atur jarak antara tulisan */
+  color: #616161; /* Ubah warna teks menjadi biru */
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #76ABAE;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+  font-size: 35px;
+}
+
+.footer nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer nav ul li {
+  display: inline;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.footer ul li a {
+  color: #fff; /* Warna putih */
+  text-decoration: none; /* Menghapus garis bawah */
+}
+
+.footer .social {
+  margin-top: 20px;
+}
+
+.footer .social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-color: #fff;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+

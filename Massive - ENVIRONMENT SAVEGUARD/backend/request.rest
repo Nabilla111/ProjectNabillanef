@@ -1,0 +1,29 @@
+GET http://localhost:5000/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsIm5hbWUiOiJSZXN0dSBSZW5kcmEiLCJlbWFpbCI6InJlc3R1QGdtYWlsLmNvbSIsImlhdCI6MTcxNzk1NDk5MiwiZXhwIjoxNzE3OTU1MDA3fQ.5Yt3kid_85hvdfE4Y7ywTtX1_K1xN13V5R56H0MfRnU
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Restu Rendra",
+    "email": "restu@gmail.com",
+    "password": "12345",
+    "confPassword": "12345"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "restu@gmail.com",
+    "password": "12345"
+}
+
+
+###
+GET http://localhost:5000/token
+
+
+###
+DELETE http://localhost:5000/logout

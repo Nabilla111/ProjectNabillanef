@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+/* Responsive */
+/* Untuk tampilan laptop dan desktop */
+@media only screen and (min-width: 1024px) {
+  section {
+    display: flex;
+  }
+
+  .sesi-left {
+    width: 55%;
+  }
+
+  .sesi-right {
+    width: 45%;
+  }
+}
+
+/* Untuk tampilan tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section {
+    display: flex;
+  }
+
+  .sesi-left {
+    width: 40%;
+  }
+
+  .sesi-right {
+    width: 60%;
+  }
+}
+
+/* Untuk tampilan perangkat Android */
+@media only screen and (max-width: 767px) {
+  .sesi-left {
+    display: none;
+  }
+}
+
+/* Section */
+section {
+  justify-content: space-between;
+}
+.sesi-left {
+  padding: 8rem 3rem;
+}
+.bg-banner {
+  background: linear-gradient(35deg, #76abae, #aad7d9, #aad7d9, #76abae);
+}
+.banner {
+  width: 100%;
+}
+.title-banner {
+  font-weight: 800;
+  font-size: 64px;
+  color: #fbf9f1;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+.subtitle-banner {
+  font-weight: 500;
+  line-height: 35px;
+  font-size: 20px;
+  color: #fbf9f1;
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+}
+.sesi-right {
+  background-color: #fff;
+  padding: 8rem 3rem 5rem 3rem;
+}
+.sesi-right .title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #616161;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input label {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #616161;
+}
+
+.form-input input {
+  border: solid #c6c5c5 1px;
+  border-radius: 8px;
+  color: #616161;
+  padding: 0.9rem 0.9rem 0.9rem 4rem;
+  font-size: 20px;
+}
+
+.form-input input::placeholder {
+  color: #c6c5c5;
+  font-size: 20px;
+}
+
+.svg-email {
+  position: absolute;
+  top: 3rem;
+  left: 0.9rem;
+}
+
+.svg-password {
+  position: absolute;
+  top: 2.8rem;
+  left: 0.9rem;
+}
+
+#label-remember input {
+  border: solid #c6c5c5 2px;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+#label-remember {
+  font-weight: 600;
+  font-size: 20px;
+  color: #828282;
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #76abae;
+  display: block;
+  margin: 1.9rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-login {
+  background-color: #76abae;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.9rem;
+  border: none;
+  width: 100%;
+  color: #616161;
+  margin-bottom: 3rem;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-login a{
+  color: #ffff;
+  text-decoration: none;
+}
+
+.title a {
+  color: #616161;
+  text-decoration: none;
+}
+
+.sign-up {
+  color: #616161;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.sign-up a {
+  color: #76abae;
+}

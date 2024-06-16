@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+form{
+    margin-top: 5cm;
+    background-image: linear-gradient(to right, #a9d6d8 , #76ABAE);
+    color: #FBF9F1;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px 1px rgba(0,0,0,0.1);
+    width: 980px;
+    height: 732px;
+    padding: 50px 60px;
+}
+
+.judul{
+    margin-bottom: 50px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #FBF9F1;
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form{
+    flex-basis: 49%;
+}
+
+.form label{
+    font-size: 14px;
+    color: #FBF9F1;
+}
+
+.form input{
+    padding: 15px 20px;
+    background-color: #FBF9F1;
+    margin-bottom: 20px;
+}
+
+.gender{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.gender .form-check{
+    margin-right: 50px;
+    
+
+.form-check-input{
+    border-radius: 30px;
+}
+}
+
+.button{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+form .btn{
+    background-color: #FFFDF3;
+    width: 199px;
+    margin-top: 25px;
+    color: #76ABAE;
+    padding: 12px 0px;
+    border-radius: 8px;
+}

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*
+  body {
+    background-color: #FFFDF3;
+    font-family: "Lato", sans-serif;
+  }
+
+  /* /Card containing 2 cards/ */
+.card0 {
+	margin: 40px 12px 15px 12px;
+}
+
+/* /Left Side card/ */
+.card1 {
+	margin: 0;
+	padding: 15px;
+	padding-top: 25px;
+	padding-bottom: 0px;
+	background: #ffff;
+	height: 100%;
+}
+
+.bill-head i {
+    font-size: 80px; /* Ubah ukuran ikon sesuai kebutuhan */
+    color: #616161; /* Ubah warna ikon */
+    margin-left: 50px;
+}
+
+.bill-head {
+    font-size: 20px; /* Ubah ukuran teks h2 */
+    color: #616161; /* Ubah warna teks h2 */
+    margin-top: 2px; /* Geser ke bawah */
+}
+
+.bill-date {
+    font-size: 14px; /* Ubah ukuran teks small */
+	color: #616161;
+}
+
+
+#heading1 {
+	color: #76ABAE;
+	font-size: 50px;
+	padding-left: 10px;
+}
+
+
+/* /Right Side Card/ */
+#heading2 {
+    padding-top: 60px;
+	font-size: 40px;
+	color: #ffff;
+    padding-bottom: 50px;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rows {
+    display: flex;
+    text-align: center;
+    padding-top: 50px;
+    color: #ffff;
+}
+
+.rows2 {
+    display: flex;
+    text-align: center;
+    padding-bottom: 30px;
+    color: #ffff;
+}
+
+.info {
+    color: #ffff;
+    width: 90%;
+}
+
+.info h6 {
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.info p {
+    width: 100%;
+    margin: 10px;
+}
+
+#paypage .form-card {
+    background: #76ABAE;
+}
+
+.btn-info {
+    background-color: #FFFFFF; /* Warna latar belakang */
+    color: #616161; /* Warna teks */
+    padding: 10px 20px; /* Padding tombol */
+    font-size: 16px; /* Ukuran teks */
+    border: none; /* Menghapus border */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat mengarah ke tombol */
+  }
+  
+  .btn-info:hover {
+    background-color: #FBF9F1; /* Warna latar belakang saat tombol dihover */
+  }
